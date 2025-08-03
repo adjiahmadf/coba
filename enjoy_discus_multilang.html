@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enjoy Discus</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+    }
+
+    .header {
+      text-align: center;
+      padding: 20px;
+      background-color: #0ef805;
+      color: white;
+    }
+
+    .logo {
+      width: 100px;
+    }
+
+    .title {
+      font-size: 36px;
+      margin: 10px 0;
+    }
+
+    .tagline {
+      font-size: 18px;
+      font-weight: 300;
+    }
+
+    .nav {
+      background-color: #333;
+    }
+
+    .menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .menu li {
+      position: relative;
+    }
+
+    .menu > li > a {
+      display: block;
+      padding: 12px 20px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .menu li a:hover, .menu li a.active {
+      background-color: #00080f;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      background: #444;
+      top: 100%;
+      left: 0;
+      min-width: 160px;
+      z-index: 10;
+    }
+
+    .menu li:hover .dropdown {
+      display: block;
+    }
+
+    .dropdown li a {
+      padding: 10px;
+      display: block;
+      color: white;
+    }
+
+    .main-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .artikel h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .artikel p {
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .post {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 40px;
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .post img {
+      max-width: 300px;
+      width: 100%;
+      border-radius: 10px;
+      margin-right: 20px;
+      margin-bottom: 10px;
+    }
+
+    .post h3 {
+      margin-top: 0;
+      font-size: 22px;
+    }
+
+    .post-content {
+      flex: 1;
+    }
+
+    @media (max-width: 768px) {
+      .post {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .post img {
+        margin: 0 0 15px 0;
+      }
+
+      .post-content {
+        width: 100%;
+      }
+    }
+
+    #language-toggle {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      z-index: 9999;
+      background: #eee;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div id="language-toggle">🇮🇩 / 🇬🇧</div>
+
+<header class="header">
+  <img src="logo.png" alt="Logo Enjoy Discus" class="logo" />
+  <h1 class="title"><span data-i18n="welcome">Selamat Datang di Enjoy Discus</span></h1>
+  <p class="tagline"><span data-i18n="tagline">Tempatnya Genetik Discus Terbaik</span></p>
+</header>
+
+<nav class="nav">
+  <ul class="menu">
+    <li><a href="#" class="active">Home</a></li>
+    <li><a href="#">Services</a></li>
+    <li>
+      <a href="#">About Us</a>
+      <ul class="dropdown">
+        <li><a href="#">Overview</a></li>
+        <li><a href="#">Our Team</a></li>
+        <li><a href="#">Join Us</a></li>
+        <li><a href="#">Partners</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="https://wa.me/6282249120180?text=Halo%20saya%20tertarik%20dengan%20ikan%20discus%20Anda" target="_blank">
+        Chat WhatsApp
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<main class="main-content">
+  <section class="artikel">
+    <h2><span data-i18n="welcome">Selamat Datang di Enjoy Discus</span></h2>
+    <p><span data-i18n="description">Enjoy Discus adalah Farm Discus terbaik di Depok untuk Anda...</span></p>
+
+    <article class="post">
+      <img src="tiger.png" alt="Ikan Discus Cantik" />
+      <div class="post-content">
+        <h3><span data-i18n="post1title">Kenapa Memilih Ikan Discus?</span></h3>
+        <p><span data-i18n="post1text">Ikan discus dikenal karena warna-warninya...</span></p>
+        <p><a href="berita1.html" class="read-more"><span data-i18n="readMore">Baca Selengkapnya →</span></a></p>
+      </div>
+    </article>
+
+    <article class="post">
+      <img src="phantera.png" alt="Perawatan Ikan Discus" />
+      <div class="post-content">
+        <h3><span data-i18n="post2title">Tips Merawat Ikan Discus</span></h3>
+        <p><span data-i18n="post2text">Merawat ikan discus memerlukan perhatian...</span></p>
+        <p><a href="berita2.html" class="read-more"><span data-i18n="readMore">Baca Selengkapnya →</span></a></p>
+      </div>
+    </article>
+  </section>
+</main>
+
+<script>
+  const translations = {
+    id: {
+      welcome: "Selamat Datang di Enjoy Discus",
+      tagline: "Tempatnya Genetik Discus Terbaik",
+      description: "Enjoy Discus adalah Farm Discus terbaik di Depok untuk Anda yang mencari ikan discus berkualitas premium. Kami menyediakan berbagai macam varian discus genetik unggulan.",
+      post1title: "Kenapa Memilih Ikan Discus?",
+      post1text: "Ikan discus dikenal karena warna-warninya yang cantik dan gerakannya yang elegan. Cocok untuk penghias akuarium rumah atau kantor Anda.",
+      post2title: "Tips Merawat Ikan Discus",
+      post2text: "Merawat ikan discus memerlukan perhatian terhadap suhu, kualitas air, dan pemberian pakan yang seimbang. Ikan ini sensitif terhadap perubahan lingkungan, jadi pastikan air tetap bersih dan teratur diganti.",
+      readMore: "Baca Selengkapnya →",
+    },
+    en: {
+      welcome: "Welcome to Enjoy Discus",
+      tagline: "The Home of the Best Discus Genetics",
+      description: "Enjoy Discus is the best Discus Farm in Depok for those looking for premium quality discus fish. We provide various types of superior genetic discus.",
+      post1title: "Why Choose Discus Fish?",
+      post1text: "Discus fish are known for their beautiful colors and elegant movements. Perfect for decorating your home or office aquarium.",
+      post2title: "Tips for Caring for Discus Fish",
+      post2text: "Caring for discus fish requires attention to temperature, water quality, and balanced feeding. They are sensitive to environmental changes, so keep the water clean and change it regularly.",
+      readMore: "Read More →",
+    },
+  };
+
+  const toggle = document.getElementById("language-toggle");
+  let currentLang = "id";
+
+  toggle.addEventListener("click", () => {
+    currentLang = currentLang === "id" ? "en" : "id";
+    updateText();
+  });
+
+  function updateText() {
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const key = el.getAttribute("data-i18n");
+      el.textContent = translations[currentLang][key];
+    });
+  }
+</script>
+</body>
+</html>
